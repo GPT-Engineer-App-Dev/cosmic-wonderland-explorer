@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPT Engineer</title>
+</head>
+
+<body>
+  <header>
+    <h1>Explore the Cosmos</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#facts">Space Facts</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Space</h2>
+      <p>Space, the final frontier, is a vast expanse of wonder and mystery. It encompasses everything beyond Earth's
+        atmosphere, including planets, stars, galaxies, and the unknown depths of the universe.</p>
+    </section>
+
+    <section id="facts">
+      <h2>Fascinating Space Facts</h2>
+      <ul id="fact-list">
+        <li>There are more stars in the universe than grains of sand on Earth.</li>
+        <li>The Sun accounts for 99.86% of the mass in our solar system.</li>
+        <li>One day on Venus is longer than one year on Earth.</li>
+      </ul>
+      <button id="new-fact">Get New Fact</button>
+    </section>
+
+    <section id="gallery">
+      <h2>Space Gallery</h2>
+      <div class="image-container">
+        <img src="https://source.unsplash.com/random/300x200?space" alt="Space Image 1">
+        <img src="https://source.unsplash.com/random/300x200?galaxy" alt="Space Image 2">
+        <img src="https://source.unsplash.com/random/300x200?nebula" alt="Space Image 3">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Explore the Cosmos. All rights reserved.</p>
+  </footer>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #0a0a2a;
+      color: #fff;
+    }
+
+    header {
+      background-color: #1a1a4a;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #4a4aff;
+    }
+
+    .image-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .image-container img {
+      margin-bottom: 1rem;
+      border-radius: 8px;
+    }
+
+    button {
+      background-color: #4a4aff;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #3a3aff;
+    }
+
+    footer {
+      background-color: #1a1a4a;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+
+  <script>
+    const facts = [
+      "The Milky Way galaxy is estimated to contain over 100 billion stars.",
+      "A day on Mars is about 24 hours and 37 minutes long.",
+      "The largest known star, UY Scuti, is over 1,700 times larger than our Sun.",
+      "There are more trees on Earth than stars in the Milky Way.",
+      "The footprints left by Apollo astronauts on the Moon will last for millions of years.",
+    ];
+
+    const factList = document.getElementById('fact-list');
+    const newFactButton = document.getElementById('new-fact');
+
+    newFactButton.addEventListener('click', () => {
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+      const newFactItem = document.createElement('li');
+      newFactItem.textContent = randomFact;
+      factList.appendChild(newFactItem);
+    });
+  </script>
+</body>
+
+</html>
